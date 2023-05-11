@@ -12,7 +12,7 @@ public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id ;
-    @Column()
+
     private String title;
     @Column(name = "game_Year")
     private Integer year;
