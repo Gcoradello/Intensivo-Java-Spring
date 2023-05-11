@@ -1,25 +1,20 @@
-package com.Intesivo.Projeto.entities;
+package com.Intesivo.Projeto.dto;
 
-import jakarta.persistence.*;
+import com.Intesivo.Projeto.entities.GameList;
 
 import java.util.Objects;
-@Entity
-@Table(name="tb_game_list")
-public class GameList {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class GameListDTO {
+
     private Long id;
     private String name;
 
-    GameList(){}
-    GameList(Long id,String name ){
-        this.id = id;
-        this.name = name;
+    public GameListDTO(){}
+
+    public GameListDTO(GameList entity){
+        this.id = entity.getId();
+        this.name = entity.getName();
     }
-
-
-
 
     public Long getId() {
         return id;
@@ -41,8 +36,8 @@ public class GameList {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        GameList gameList = (GameList) o;
-        return id.equals(gameList.id);
+        GameListDTO that = (GameListDTO) o;
+        return Objects.equals(id, that.id);
     }
 
     @Override

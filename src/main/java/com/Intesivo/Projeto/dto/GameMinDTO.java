@@ -1,6 +1,7 @@
 package com.Intesivo.Projeto.dto;
 
 import com.Intesivo.Projeto.entities.Game;
+import com.Intesivo.Projeto.entities.GameList;
 
 public class GameMinDTO {
     private long id;
@@ -19,6 +20,8 @@ public class GameMinDTO {
         this.imgUrl = entiti.getImgUrl();
         this.shortDescription = entiti.getShortDescription();
     }
+
+
 
     public long getId() {
         return id;
